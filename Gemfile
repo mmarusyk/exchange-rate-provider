@@ -7,6 +7,15 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 
 gem 'thruster', require: false
 
+gem 'blueprinter'
+gem 'dry-struct'
+gem 'dry-validation'
+gem 'faraday'
+gem 'oj'
+gem 'redis'
+gem 'trailblazer'
+gem 'trailblazer-rails'
+
 group :development, :test do
   gem 'brakeman', require: false
   gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'

@@ -16,12 +16,16 @@ gem 'redis'
 gem 'trailblazer'
 gem 'trailblazer-rails'
 
+gem 'rswag-api'
+gem 'rswag-ui'
+
 group :development, :test do
   gem 'brakeman', require: false
   gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
+  gem 'rswag-specs'
   gem 'rubocop', require: false
   gem 'rubocop-factory_bot', require: false
   gem 'rubocop-performance', require: false

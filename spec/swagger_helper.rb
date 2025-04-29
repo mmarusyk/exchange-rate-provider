@@ -16,7 +16,7 @@ RSpec.configure do |config|
           url: '{defaultHost}',
           variables: {
             defaultHost: {
-              default: 'http://localhost:3000'
+              default: ENV.fetch('API_HOST', 'http://localhost:3000')
             }
           }
         }

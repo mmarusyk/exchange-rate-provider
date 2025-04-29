@@ -1,0 +1,14 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/mmarusyk/Code/exchange-rate-provider/app/controllers/application_controller.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {}
+      }
+    },
+    "timestamp": 1745946552
+  }
+}

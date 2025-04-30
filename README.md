@@ -5,6 +5,7 @@
 The Exchange Rate Provider is an application that delivers current exchange rates from the Czech National Bank (CNB). It exposes a RESTful API that allows clients to retrieve exchange rates between currencies, with options for filtering by specific currencies, dates.
 
 1. Documentation: https://exchange-rate-provider-u6pr.onrender.com/api-docs/index.html
+2. CNP API Reference: https://api.cnb.cz/cnbapi/swagger-ui.html
 
 ## 2. Technologies Used
 
@@ -61,8 +62,8 @@ cd exchange-rate-provider
 2. Build and start the containers
 
 ```
-docker-compose build
-docker-compose up
+docker compose build
+docker compose up
 ```
 
 3. Get rates using the url: http://localhost:3000/api/v1/exchange_rates?source_currency=CZK
@@ -77,13 +78,13 @@ The API is documented using OpenAPI/Swagger. Once the application is running, yo
 1. Running Tests
 
 ```
-docker-compose run app bundle exec rspec
+docker compose run app bundle exec rspec
 ```
 
 2. Running Rubocop
 
 ```
-docker-compose run app bundle exec rubocop
+docker compose run app bundle exec rubocop
 ```
 
 3. Test Coverage
@@ -95,5 +96,5 @@ open coverage/index.html
 4. Generate Swagger Documentation
 
 ```
-docker-compose run app bundle exec rails rswag:specs:swaggerize
+docker compose run -e SWAGGER_DRY_RUN=0 -e RAILS_ENV=test app bundle exec rails rswag
 ```

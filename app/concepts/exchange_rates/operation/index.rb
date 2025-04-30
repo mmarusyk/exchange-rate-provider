@@ -4,7 +4,8 @@ module ExchangeRates
       step Trb::Step::SanitizeParams
       step ExchangeRates::Step::NormalizeParams
       step ExchangeRates::Step::ValidateParams
-      step ExchangeRates::Step::FetchExchangeRates
+      step ExchangeRates::Step::Fetch
+      step ExchangeRates::Step::Filter
     end
   end
 end

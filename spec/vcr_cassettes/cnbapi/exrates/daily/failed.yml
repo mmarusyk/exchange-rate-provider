@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.cnb.cz/cnbapi/exrates/daily?date=2025-03-05
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: '400'
+    headers:
+      Date:
+      - Wed, 30 Apr 2025 15:40:52 GMT
+      Server:
+      - Apache
+      Strict-Transport-Security:
+      - max-age=63072000; includeSubDomains; preloa                         d
+      X-Frame-Options:
+      - DENY
+      - SAMEORIGIN
+      Content-Type:
+      - application/json
+      Connection:
+      - close
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"description":"ValidationErrorCode: typeMismatch;  Field: date; Value:
+        failed","errorCode":"VALIDATION_ERROR","happenedAt":"2025-04-30 18:40:52","endPoint":"/cnbapi/exrates/daily?date=failed","messageId":"6NzNT18vejmQ"}'
+  recorded_at: Wed, 30 Apr 2025 15:40:52 GMT
+recorded_with: VCR 6.3.1

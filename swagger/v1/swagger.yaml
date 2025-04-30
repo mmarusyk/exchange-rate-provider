@@ -27,11 +27,31 @@
           {
             "name": "source_currency",
             "in": "query",
-            "type": "string",
             "required": true,
             "schema": {
+              "pattern": "^[A-Z]{3}$",
+              "default": "CZK"
+            }
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "required": false,
+            "schema": {
               "type": "string",
-              "pattern": "^[A-Z]{3}$"
+              "format": "date"
+            }
+          },
+          {
+            "name": "lang",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "CZ",
+                "EN"
+              ]
             }
           },
           {
@@ -44,29 +64,6 @@
                 "type": "string",
                 "pattern": "^[A-Z]{3}$"
               }
-            }
-          },
-          {
-            "name": "date",
-            "in": "query",
-            "type": "string",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "format": "date"
-            }
-          },
-          {
-            "name": "lang",
-            "in": "query",
-            "type": "string",
-            "required": false,
-            "schema": {
-              "type": "string",
-              "enum": [
-                "CZ",
-                "EN"
-              ]
             }
           }
         ],
@@ -81,279 +78,186 @@
                       {
                         "target_currency": "AUD",
                         "amount": 1.0,
-                        "country": "Austrálie",
-                        "currency_name": "dolar",
-                        "date": "2025-04-29",
                         "rate": 14.038,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "BRL",
                         "amount": 1.0,
-                        "country": "Brazílie",
-                        "currency_name": "real",
-                        "date": "2025-04-29",
                         "rate": 3.876,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "BGN",
                         "amount": 1.0,
-                        "country": "Bulharsko",
-                        "currency_name": "lev",
-                        "date": "2025-04-29",
                         "rate": 12.742,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "CNY",
                         "amount": 1.0,
-                        "country": "Čína",
-                        "currency_name": "žen-min-pi",
-                        "date": "2025-04-29",
                         "rate": 3.012,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "DKK",
                         "amount": 1.0,
-                        "country": "Dánsko",
-                        "currency_name": "koruna",
-                        "date": "2025-04-29",
                         "rate": 3.339,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "EUR",
                         "amount": 1.0,
-                        "country": "EMU",
-                        "currency_name": "euro",
-                        "date": "2025-04-29",
                         "rate": 24.92,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "PHP",
                         "amount": 100.0,
-                        "country": "Filipíny",
-                        "currency_name": "peso",
-                        "date": "2025-04-29",
                         "rate": 39.051,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "HKD",
                         "amount": 1.0,
-                        "country": "Hongkong",
-                        "currency_name": "dolar",
-                        "date": "2025-04-29",
                         "rate": 2.824,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "INR",
                         "amount": 100.0,
-                        "country": "Indie",
-                        "currency_name": "rupie",
-                        "date": "2025-04-29",
                         "rate": 25.732,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "IDR",
                         "amount": 1000.0,
-                        "country": "Indonesie",
-                        "currency_name": "rupie",
-                        "date": "2025-04-29",
                         "rate": 1.307,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "ISK",
                         "amount": 100.0,
-                        "country": "Island",
-                        "currency_name": "koruna",
-                        "date": "2025-04-29",
                         "rate": 17.057,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "ILS",
                         "amount": 1.0,
-                        "country": "Izrael",
-                        "currency_name": "nový šekel",
-                        "date": "2025-04-29",
                         "rate": 6.05,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "JPY",
                         "amount": 100.0,
-                        "country": "Japonsko",
-                        "currency_name": "jen",
-                        "date": "2025-04-29",
                         "rate": 15.358,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "ZAR",
                         "amount": 1.0,
-                        "country": "Jižní Afrika",
-                        "currency_name": "rand",
-                        "date": "2025-04-29",
                         "rate": 1.181,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "CAD",
                         "amount": 1.0,
-                        "country": "Kanada",
-                        "currency_name": "dolar",
-                        "date": "2025-04-29",
                         "rate": 15.831,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "KRW",
                         "amount": 100.0,
-                        "country": "Korejská republika",
-                        "currency_name": "won",
-                        "date": "2025-04-29",
                         "rate": 1.527,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "HUF",
                         "amount": 100.0,
-                        "country": "Maďarsko",
-                        "currency_name": "forint",
-                        "date": "2025-04-29",
                         "rate": 6.167,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "MYR",
                         "amount": 1.0,
-                        "country": "Malajsie",
-                        "currency_name": "ringgit",
-                        "date": "2025-04-29",
                         "rate": 5.063,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "MXN",
                         "amount": 1.0,
-                        "country": "Mexiko",
-                        "currency_name": "peso",
-                        "date": "2025-04-29",
                         "rate": 1.118,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "XDR",
                         "amount": 1.0,
-                        "country": "MMF",
-                        "currency_name": "ZPČ",
-                        "date": "2025-04-29",
                         "rate": 29.677,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "NOK",
                         "amount": 1.0,
-                        "country": "Norsko",
-                        "currency_name": "koruna",
-                        "date": "2025-04-29",
                         "rate": 2.112,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "NZD",
                         "amount": 1.0,
-                        "country": "Nový Zéland",
-                        "currency_name": "dolar",
-                        "date": "2025-04-29",
                         "rate": 13.046,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "PLN",
                         "amount": 1.0,
-                        "country": "Polsko",
-                        "currency_name": "zlotý",
-                        "date": "2025-04-29",
                         "rate": 5.835,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "RON",
                         "amount": 1.0,
-                        "country": "Rumunsko",
-                        "currency_name": "leu",
-                        "date": "2025-04-29",
                         "rate": 5.006,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "SGD",
                         "amount": 1.0,
-                        "country": "Singapur",
-                        "currency_name": "dolar",
-                        "date": "2025-04-29",
                         "rate": 16.732,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "SEK",
                         "amount": 1.0,
-                        "country": "Švédsko",
-                        "currency_name": "koruna",
-                        "date": "2025-04-29",
                         "rate": 2.273,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "CHF",
                         "amount": 1.0,
-                        "country": "Švýcarsko",
-                        "currency_name": "frank",
-                        "date": "2025-04-29",
                         "rate": 26.538,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "THB",
                         "amount": 100.0,
-                        "country": "Thajsko",
-                        "currency_name": "baht",
-                        "date": "2025-04-29",
                         "rate": 65.512,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "TRY",
                         "amount": 100.0,
-                        "country": "Turecko",
-                        "currency_name": "lira",
-                        "date": "2025-04-29",
                         "rate": 56.997,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "USD",
                         "amount": 1.0,
-                        "country": "USA",
-                        "currency_name": "dolar",
-                        "date": "2025-04-29",
                         "rate": 21.909,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "GBP",
                         "amount": 1.0,
-                        "country": "Velká Británie",
-                        "currency_name": "libra",
-                        "date": "2025-04-29",
                         "rate": 29.328,
                         "source_currency": "CZK"
                       }
@@ -364,18 +268,12 @@
                       {
                         "target_currency": "EUR",
                         "amount": 1.0,
-                        "country": "EMU",
-                        "currency_name": "euro",
-                        "date": "2025-04-29",
                         "rate": 24.92,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "USD",
                         "amount": 1.0,
-                        "country": "USA",
-                        "currency_name": "dolar",
-                        "date": "2025-04-29",
                         "rate": 21.909,
                         "source_currency": "CZK"
                       }
@@ -386,279 +284,186 @@
                       {
                         "target_currency": "AUD",
                         "amount": 1.0,
-                        "country": "Austrálie",
-                        "currency_name": "dolar",
-                        "date": "2025-03-05",
                         "rate": 14.715,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "BRL",
                         "amount": 1.0,
-                        "country": "Brazílie",
-                        "currency_name": "real",
-                        "date": "2025-03-05",
                         "rate": 3.983,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "BGN",
                         "amount": 1.0,
-                        "country": "Bulharsko",
-                        "currency_name": "lev",
-                        "date": "2025-03-05",
                         "rate": 12.814,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "CNY",
                         "amount": 1.0,
-                        "country": "Čína",
-                        "currency_name": "žen-min-pi",
-                        "date": "2025-03-05",
                         "rate": 3.227,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "DKK",
                         "amount": 1.0,
-                        "country": "Dánsko",
-                        "currency_name": "koruna",
-                        "date": "2025-03-05",
                         "rate": 3.363,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "EUR",
                         "amount": 1.0,
-                        "country": "EMU",
-                        "currency_name": "euro",
-                        "date": "2025-03-05",
                         "rate": 25.085,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "PHP",
                         "amount": 100.0,
-                        "country": "Filipíny",
-                        "currency_name": "peso",
-                        "date": "2025-03-05",
                         "rate": 40.833,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "HKD",
                         "amount": 1.0,
-                        "country": "Hongkong",
-                        "currency_name": "dolar",
-                        "date": "2025-03-05",
                         "rate": 3.016,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "INR",
                         "amount": 100.0,
-                        "country": "Indie",
-                        "currency_name": "rupie",
-                        "date": "2025-03-05",
                         "rate": 26.928,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "IDR",
                         "amount": 1000.0,
-                        "country": "Indonesie",
-                        "currency_name": "rupie",
-                        "date": "2025-03-05",
                         "rate": 1.437,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "ISK",
                         "amount": 100.0,
-                        "country": "Island",
-                        "currency_name": "koruna",
-                        "date": "2025-03-05",
                         "rate": 17.123,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "ILS",
                         "amount": 1.0,
-                        "country": "Izrael",
-                        "currency_name": "nový šekel",
-                        "date": "2025-03-05",
                         "rate": 6.464,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "JPY",
                         "amount": 100.0,
-                        "country": "Japonsko",
-                        "currency_name": "jen",
-                        "date": "2025-03-05",
                         "rate": 15.662,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "ZAR",
                         "amount": 1.0,
-                        "country": "Jižní Afrika",
-                        "currency_name": "rand",
-                        "date": "2025-03-05",
                         "rate": 1.269,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "CAD",
                         "amount": 1.0,
-                        "country": "Kanada",
-                        "currency_name": "dolar",
-                        "date": "2025-03-05",
                         "rate": 16.277,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "KRW",
                         "amount": 100.0,
-                        "country": "Korejská republika",
-                        "currency_name": "won",
-                        "date": "2025-03-05",
                         "rate": 1.616,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "HUF",
                         "amount": 100.0,
-                        "country": "Maďarsko",
-                        "currency_name": "forint",
-                        "date": "2025-03-05",
                         "rate": 6.29,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "MYR",
                         "amount": 1.0,
-                        "country": "Malajsie",
-                        "currency_name": "ringgit",
-                        "date": "2025-03-05",
                         "rate": 5.292,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "MXN",
                         "amount": 1.0,
-                        "country": "Mexiko",
-                        "currency_name": "peso",
-                        "date": "2025-03-05",
                         "rate": 1.14,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "XDR",
                         "amount": 1.0,
-                        "country": "MMF",
-                        "currency_name": "ZPČ",
-                        "date": "2025-03-05",
                         "rate": 30.878,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "NOK",
                         "amount": 1.0,
-                        "country": "Norsko",
-                        "currency_name": "koruna",
-                        "date": "2025-03-05",
                         "rate": 2.124,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "NZD",
                         "amount": 1.0,
-                        "country": "Nový Zéland",
-                        "currency_name": "dolar",
-                        "date": "2025-03-05",
                         "rate": 13.31,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "PLN",
                         "amount": 1.0,
-                        "country": "Polsko",
-                        "currency_name": "zlotý",
-                        "date": "2025-03-05",
                         "rate": 6.037,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "RON",
                         "amount": 1.0,
-                        "country": "Rumunsko",
-                        "currency_name": "leu",
-                        "date": "2025-03-05",
                         "rate": 5.041,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "SGD",
                         "amount": 1.0,
-                        "country": "Singapur",
-                        "currency_name": "dolar",
-                        "date": "2025-03-05",
                         "rate": 17.526,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "SEK",
                         "amount": 1.0,
-                        "country": "Švédsko",
-                        "currency_name": "koruna",
-                        "date": "2025-03-05",
                         "rate": 2.278,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "CHF",
                         "amount": 1.0,
-                        "country": "Švýcarsko",
-                        "currency_name": "frank",
-                        "date": "2025-03-05",
                         "rate": 26.341,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "THB",
                         "amount": 100.0,
-                        "country": "Thajsko",
-                        "currency_name": "baht",
-                        "date": "2025-03-05",
                         "rate": 69.661,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "TRY",
                         "amount": 100.0,
-                        "country": "Turecko",
-                        "currency_name": "lira",
-                        "date": "2025-03-05",
                         "rate": 64.322,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "USD",
                         "amount": 1.0,
-                        "country": "USA",
-                        "currency_name": "dolar",
-                        "date": "2025-03-05",
                         "rate": 23.44,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "GBP",
                         "amount": 1.0,
-                        "country": "Velká Británie",
-                        "currency_name": "libra",
-                        "date": "2025-03-05",
                         "rate": 30.02,
                         "source_currency": "CZK"
                       }
@@ -669,283 +474,193 @@
                       {
                         "target_currency": "AUD",
                         "amount": 1.0,
-                        "country": "Australia",
-                        "currency_name": "dollar",
-                        "date": "2025-04-29",
                         "rate": 14.038,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "BRL",
                         "amount": 1.0,
-                        "country": "Brazil",
-                        "currency_name": "real",
-                        "date": "2025-04-29",
                         "rate": 3.876,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "BGN",
                         "amount": 1.0,
-                        "country": "Bulgaria",
-                        "currency_name": "lev",
-                        "date": "2025-04-29",
                         "rate": 12.742,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "CAD",
                         "amount": 1.0,
-                        "country": "Canada",
-                        "currency_name": "dollar",
-                        "date": "2025-04-29",
                         "rate": 15.831,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "CNY",
                         "amount": 1.0,
-                        "country": "China",
-                        "currency_name": "renminbi",
-                        "date": "2025-04-29",
                         "rate": 3.012,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "DKK",
                         "amount": 1.0,
-                        "country": "Denmark",
-                        "currency_name": "krone",
-                        "date": "2025-04-29",
                         "rate": 3.339,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "EUR",
                         "amount": 1.0,
-                        "country": "EMU",
-                        "currency_name": "euro",
-                        "date": "2025-04-29",
                         "rate": 24.92,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "HKD",
                         "amount": 1.0,
-                        "country": "Hongkong",
-                        "currency_name": "dollar",
-                        "date": "2025-04-29",
                         "rate": 2.824,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "HUF",
                         "amount": 100.0,
-                        "country": "Hungary",
-                        "currency_name": "forint",
-                        "date": "2025-04-29",
                         "rate": 6.167,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "ISK",
                         "amount": 100.0,
-                        "country": "Iceland",
-                        "currency_name": "krona",
-                        "date": "2025-04-29",
                         "rate": 17.057,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "XDR",
                         "amount": 1.0,
-                        "country": "IMF",
-                        "currency_name": "SDR",
-                        "date": "2025-04-29",
                         "rate": 29.677,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "INR",
                         "amount": 100.0,
-                        "country": "India",
-                        "currency_name": "rupee",
-                        "date": "2025-04-29",
                         "rate": 25.732,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "IDR",
                         "amount": 1000.0,
-                        "country": "Indonesia",
-                        "currency_name": "rupiah",
-                        "date": "2025-04-29",
                         "rate": 1.307,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "ILS",
                         "amount": 1.0,
-                        "country": "Israel",
-                        "currency_name": "new shekel",
-                        "date": "2025-04-29",
                         "rate": 6.05,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "JPY",
                         "amount": 100.0,
-                        "country": "Japan",
-                        "currency_name": "yen",
-                        "date": "2025-04-29",
                         "rate": 15.358,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "MYR",
                         "amount": 1.0,
-                        "country": "Malaysia",
-                        "currency_name": "ringgit",
-                        "date": "2025-04-29",
                         "rate": 5.063,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "MXN",
                         "amount": 1.0,
-                        "country": "Mexico",
-                        "currency_name": "peso",
-                        "date": "2025-04-29",
                         "rate": 1.118,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "NZD",
                         "amount": 1.0,
-                        "country": "New Zealand",
-                        "currency_name": "dollar",
-                        "date": "2025-04-29",
                         "rate": 13.046,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "NOK",
                         "amount": 1.0,
-                        "country": "Norway",
-                        "currency_name": "krone",
-                        "date": "2025-04-29",
                         "rate": 2.112,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "PHP",
                         "amount": 100.0,
-                        "country": "Philippines",
-                        "currency_name": "peso",
-                        "date": "2025-04-29",
                         "rate": 39.051,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "PLN",
                         "amount": 1.0,
-                        "country": "Poland",
-                        "currency_name": "zloty",
-                        "date": "2025-04-29",
                         "rate": 5.835,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "RON",
                         "amount": 1.0,
-                        "country": "Romania",
-                        "currency_name": "leu",
-                        "date": "2025-04-29",
                         "rate": 5.006,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "SGD",
                         "amount": 1.0,
-                        "country": "Singapore",
-                        "currency_name": "dollar",
-                        "date": "2025-04-29",
                         "rate": 16.732,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "ZAR",
                         "amount": 1.0,
-                        "country": "South Africa",
-                        "currency_name": "rand",
-                        "date": "2025-04-29",
                         "rate": 1.181,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "KRW",
                         "amount": 100.0,
-                        "country": "South Korea",
-                        "currency_name": "won",
-                        "date": "2025-04-29",
                         "rate": 1.527,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "SEK",
                         "amount": 1.0,
-                        "country": "Sweden",
-                        "currency_name": "krona",
-                        "date": "2025-04-29",
                         "rate": 2.273,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "CHF",
                         "amount": 1.0,
-                        "country": "Switzerland",
-                        "currency_name": "franc",
-                        "date": "2025-04-29",
                         "rate": 26.538,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "THB",
                         "amount": 100.0,
-                        "country": "Thailand",
-                        "currency_name": "baht",
-                        "date": "2025-04-29",
                         "rate": 65.512,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "TRY",
                         "amount": 100.0,
-                        "country": "Turkey",
-                        "currency_name": "lira",
-                        "date": "2025-04-29",
                         "rate": 56.997,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "GBP",
                         "amount": 1.0,
-                        "country": "United Kingdom",
-                        "currency_name": "pound",
-                        "date": "2025-04-29",
                         "rate": 29.328,
                         "source_currency": "CZK"
                       },
                       {
                         "target_currency": "USD",
                         "amount": 1.0,
-                        "country": "USA",
-                        "currency_name": "dollar",
-                        "date": "2025-04-29",
                         "rate": 21.909,
                         "source_currency": "CZK"
                       }
                     ]
+                  },
+                  "with unsupported source currency OK returns a 200 response": {
+                    "value": []
                   }
                 }
               }
@@ -961,15 +676,6 @@
                       "errors": {
                         "source_currency": [
                           "must be a valid 3-letter currency code"
-                        ]
-                      }
-                    }
-                  },
-                  "Invalid request parameters with unsupported source currency returns a 422 response": {
-                    "value": {
-                      "errors": {
-                        "source_currency": [
-                          "No provider available for MMM"
                         ]
                       }
                     }
@@ -991,22 +697,12 @@
                         ]
                       }
                     }
-                  }
-                },
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "errors": {
-                      "type": "object",
-                      "additionalProperties": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "example": {
-                        "source_currency": [
-                          "must be a valid 3-letter currency code"
+                  },
+                  "Invalid request parameters when external server returns an error returns a 422 response": {
+                    "value": {
+                      "errors": {
+                        "base": [
+                          "API request failed with status 400"
                         ]
                       }
                     }

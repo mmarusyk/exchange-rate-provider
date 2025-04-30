@@ -3,11 +3,14 @@ module ExchangeRateProvider
     class CnbProvider < ProviderInterface
       BASE_URL = 'https://api.cnb.cz/cnbapi/exrates/daily'.freeze
       SOURCE_CURRENCY = 'CZK'.freeze
+      EXPIRES_IN = 1.hour.freeze
 
       def call(date: nil, lang: nil)
-        response = make_request(date: date, lang: lang)
+        Rails.cache.fetch(cache_key(date, lang), expires_in: EXPIRES_IN) do
+          response = make_request(date: date, lang: lang)
 
-        parse_response(response)
+          parse_response(response)
+        end
       end
 
       private
@@ -40,6 +43,10 @@ module ExchangeRateProvider
             currency_name: rate_data['currency']
           )
         end
+      end
+
+      def cache_key(date, lang)
+        ['exchange_rates', 'cnb', SOURCE_CURRENCY, date, lang].join('_')
       end
     end
   end

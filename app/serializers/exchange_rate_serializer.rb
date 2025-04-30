@@ -3,5 +3,5 @@ class ExchangeRateSerializer < Blueprinter::Base
 
   identifier :target_currency
 
-  fields :date, :source_currency, :target_currency, :amount, :rate, :country, :currency_name
+  fields :source_currency, :amount, :rate
 end

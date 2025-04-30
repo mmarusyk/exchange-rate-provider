@@ -7,20 +7,15 @@ RSpec.describe '/api/v1/exchange_rates' do
       description 'Retrieves exchange rates based on source currency'
       produces 'application/json'
 
-      parameter name: :source_currency, in: :query, type: :string, required: true,
-                schema: { type: :string, pattern: '^[A-Z]{3}$' }
+      parameter name: :source_currency, in: :query, required: true, schema: { pattern: '^[A-Z]{3}$', default: 'CZK' }
+      parameter name: :date, in: :query, required: false, schema: { type: :string, format: 'date' }
+      parameter name: :lang, in: :query, required: false, schema: { type: :string, enum: %w[CZ EN] }
 
       parameter name: :'target_currency[]', in: :query, required: false,
                 schema: {
                   type: :array,
                   items: { type: :string, pattern: '^[A-Z]{3}$' }
                 }
-
-      parameter name: :date, in: :query, type: :string, required: false,
-                schema: { type: :string, format: 'date' }
-
-      parameter name: :lang, in: :query, type: :string, required: false,
-                schema: { type: :string, enum: %w[CZ EN] }
 
       let(:source_currency) { 'CZK' }
 
@@ -60,7 +55,7 @@ RSpec.describe '/api/v1/exchange_rates' do
         response('200', 'OK') do
           run_test! do |response|
             data = JSON.parse(response.body)
-            expect(data.first['date']).to eq('2025-03-05')
+            expect(data).to be_present
           end
         end
       end
@@ -71,27 +66,24 @@ RSpec.describe '/api/v1/exchange_rates' do
         response('200', 'OK') do
           run_test! do |response|
             data = JSON.parse(response.body)
-            expect(data.first).to have_key('country')
-            expect(data.first).to have_key('currency_name')
+            expect(data).to be_present
+          end
+        end
+      end
+
+      context 'with unsupported source currency' do
+        let(:source_currency) { 'UAH' }
+
+        response('200', 'OK') do
+          run_test! do |response|
+            data = JSON.parse(response.body)
+
+            expect(data).to be_empty
           end
         end
       end
 
       response('422', 'Invalid request parameters') do
-        schema type: :object,
-               properties: {
-                 errors: {
-                   type: :object,
-                   additionalProperties: {
-                     type: :array,
-                     items: { type: :string }
-                   },
-                   example: {
-                     source_currency: ['must be a valid 3-letter currency code']
-                   }
-                 }
-               }
-
         context 'with invalid source currency format' do
           let(:source_currency) { 'invalid' }
 
@@ -99,16 +91,6 @@ RSpec.describe '/api/v1/exchange_rates' do
             data = JSON.parse(response.body)
             expect(data['errors']).to have_key('source_currency')
             expect(data['errors']['source_currency']).to include('must be a valid 3-letter currency code')
-          end
-        end
-
-        context 'with unsupported source currency' do
-          let(:source_currency) { 'MMM' }
-
-          run_test! do |response|
-            data = JSON.parse(response.body)
-            expect(data['errors']).to have_key('source_currency')
-            expect(data['errors']['source_currency']).to include('No provider available for MMM')
           end
         end
 
@@ -129,6 +111,16 @@ RSpec.describe '/api/v1/exchange_rates' do
           run_test! do |response|
             data = JSON.parse(response.body)
             expect(data['errors']).to have_key('date')
+          end
+        end
+
+        context 'when external server returns an error', vcr: { cassette_name: 'cnbapi/exrates/daily/failed' } do
+          let(:source_currency) { 'CZK' }
+          let(:date) { '2025-03-05' }
+
+          run_test! do |response|
+            data = JSON.parse(response.body)
+            expect(data['errors']).to have_key('base')
           end
         end
       end

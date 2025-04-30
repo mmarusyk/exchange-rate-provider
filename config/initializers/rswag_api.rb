@@ -11,4 +11,13 @@ Rswag::Api.configure do |c|
   # For example, you could leverage this to dynamically assign the "host" property
   #
   #c.swagger_filter = lambda { |swagger, env| swagger['host'] = env['HTTP_HOST'] }
+  c.swagger_filter = lambda do |swagger, env|
+    host = ENV.fetch('API_HOST', 'http://localhost:3000')
+   
+    if swagger.dig('servers', 0)
+      swagger['servers'][0]['variables']['defaultHost']['default'] = host
+    end
+
+    swagger
+  end
 end

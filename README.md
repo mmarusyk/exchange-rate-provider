@@ -20,6 +20,8 @@ The Exchange Rate Provider is an application that delivers current exchange rate
 - **Docker/Docker Compose** - Containerization
 - **Faraday** - HTTP client
 - **Oj** - Fast JSON parser/generator
+- **rack-limiting** - Middleware for rate limiting requests.
+- **Redis** - Caching exchange rates.
 
 ## 3. Architecture Explanation
 
@@ -98,3 +100,11 @@ open coverage/index.html
 ```
 docker compose run -e SWAGGER_DRY_RUN=0 -e RAILS_ENV=test app bundle exec rails rswag
 ```
+
+## Improvements
+
+1. Integrate other exchange rate providers.
+2. Implement caching strategies.
+3. Add pagination support for large result sets.
+4. Implement new functionality.
+5. Set up CI/CD pipeline.

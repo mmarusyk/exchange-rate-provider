@@ -5,7 +5,7 @@ module Api
         operation = ExchangeRates::Operation::Index.call(params: params)
 
         if operation.success?
-          render json: ExchangeRateSerializer.render(operation[:result]), status: :ok
+          render json: ExchangeRateSerializer.render_with_object(operation[:result]), status: :ok
         else
           render json: { errors: operation[:errors] }, status: :unprocessable_entity
         end

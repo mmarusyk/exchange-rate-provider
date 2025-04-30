@@ -30,8 +30,8 @@ RSpec.describe '/api/v1/exchange_rates' do
         response('200', 'OK') do
           run_test! do |response|
             data = JSON.parse(response.body)
-            expect(data).to be_an(Array)
-            expect(data.first).to include('source_currency', 'target_currency', 'rate')
+            expect(data).to include('source_currency', 'rates')
+            expect(data['rates'].first[1]).to include('rate', 'amount')
           end
         end
       end
@@ -42,8 +42,7 @@ RSpec.describe '/api/v1/exchange_rates' do
         response('200', 'OK') do
           run_test! do |response|
             data = JSON.parse(response.body)
-            target_currencies = data.map { |r| r['target_currency'] }
-            expect(target_currencies).to match_array(%w[EUR USD])
+            expect(data['rates'].keys).to match_array(%w[EUR USD])
           end
         end
       end

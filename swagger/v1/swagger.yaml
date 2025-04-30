@@ -62,403 +62,284 @@
               "application/json": {
                 "examples": {
                   "with basic parameters OK returns a 200 response": {
-                    "value": [
-                      {
-                        "target_currency": "AUD",
-                        "amount": 1.0,
-                        "rate": 14.001,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "BRL",
-                        "amount": 1.0,
-                        "rate": 3.904,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "BGN",
-                        "amount": 1.0,
-                        "rate": 12.747,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "CNY",
-                        "amount": 1.0,
-                        "rate": 3.015,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "DKK",
-                        "amount": 1.0,
-                        "rate": 3.34,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "EUR",
-                        "amount": 1.0,
-                        "rate": 24.93,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "PHP",
-                        "amount": 100.0,
-                        "rate": 39.21,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "HKD",
-                        "amount": 1.0,
-                        "rate": 2.824,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "INR",
-                        "amount": 100.0,
-                        "rate": 25.91,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "IDR",
-                        "amount": 1000.0,
-                        "rate": 1.32,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "ISK",
-                        "amount": 100.0,
-                        "rate": 17.087,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "ILS",
-                        "amount": 1.0,
-                        "rate": 6.033,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "JPY",
-                        "amount": 100.0,
-                        "rate": 15.329,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "ZAR",
-                        "amount": 1.0,
-                        "rate": 1.179,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "CAD",
-                        "amount": 1.0,
-                        "rate": 15.843,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "KRW",
-                        "amount": 100.0,
-                        "rate": 1.54,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "HUF",
-                        "amount": 100.0,
-                        "rate": 6.168,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "MYR",
-                        "amount": 1.0,
-                        "rate": 5.076,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "MXN",
-                        "amount": 1.0,
-                        "rate": 1.121,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "XDR",
-                        "amount": 1.0,
-                        "rate": 29.727,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "NOK",
-                        "amount": 1.0,
-                        "rate": 2.112,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "NZD",
-                        "amount": 1.0,
-                        "rate": 12.966,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "PLN",
-                        "amount": 1.0,
-                        "rate": 5.834,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "RON",
-                        "amount": 1.0,
-                        "rate": 5.007,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "SGD",
-                        "amount": 1.0,
-                        "rate": 16.772,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "SEK",
-                        "amount": 1.0,
-                        "rate": 2.272,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "CHF",
-                        "amount": 1.0,
-                        "rate": 26.559,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "THB",
-                        "amount": 100.0,
-                        "rate": 65.535,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "TRY",
-                        "amount": 100.0,
-                        "rate": 56.938,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "USD",
-                        "amount": 1.0,
-                        "rate": 21.905,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "GBP",
-                        "amount": 1.0,
-                        "rate": 29.266,
-                        "source_currency": "CZK"
+                    "value": {
+                      "source_currency": "CZK",
+                      "rates": {
+                        "AUD": {
+                          "amount": 1.0,
+                          "rate": 14.001
+                        },
+                        "BRL": {
+                          "amount": 1.0,
+                          "rate": 3.904
+                        },
+                        "BGN": {
+                          "amount": 1.0,
+                          "rate": 12.747
+                        },
+                        "CNY": {
+                          "amount": 1.0,
+                          "rate": 3.015
+                        },
+                        "DKK": {
+                          "amount": 1.0,
+                          "rate": 3.34
+                        },
+                        "EUR": {
+                          "amount": 1.0,
+                          "rate": 24.93
+                        },
+                        "PHP": {
+                          "amount": 100.0,
+                          "rate": 39.21
+                        },
+                        "HKD": {
+                          "amount": 1.0,
+                          "rate": 2.824
+                        },
+                        "INR": {
+                          "amount": 100.0,
+                          "rate": 25.91
+                        },
+                        "IDR": {
+                          "amount": 1000.0,
+                          "rate": 1.32
+                        },
+                        "ISK": {
+                          "amount": 100.0,
+                          "rate": 17.087
+                        },
+                        "ILS": {
+                          "amount": 1.0,
+                          "rate": 6.033
+                        },
+                        "JPY": {
+                          "amount": 100.0,
+                          "rate": 15.329
+                        },
+                        "ZAR": {
+                          "amount": 1.0,
+                          "rate": 1.179
+                        },
+                        "CAD": {
+                          "amount": 1.0,
+                          "rate": 15.843
+                        },
+                        "KRW": {
+                          "amount": 100.0,
+                          "rate": 1.54
+                        },
+                        "HUF": {
+                          "amount": 100.0,
+                          "rate": 6.168
+                        },
+                        "MYR": {
+                          "amount": 1.0,
+                          "rate": 5.076
+                        },
+                        "MXN": {
+                          "amount": 1.0,
+                          "rate": 1.121
+                        },
+                        "XDR": {
+                          "amount": 1.0,
+                          "rate": 29.727
+                        },
+                        "NOK": {
+                          "amount": 1.0,
+                          "rate": 2.112
+                        },
+                        "NZD": {
+                          "amount": 1.0,
+                          "rate": 12.966
+                        },
+                        "PLN": {
+                          "amount": 1.0,
+                          "rate": 5.834
+                        },
+                        "RON": {
+                          "amount": 1.0,
+                          "rate": 5.007
+                        },
+                        "SGD": {
+                          "amount": 1.0,
+                          "rate": 16.772
+                        },
+                        "SEK": {
+                          "amount": 1.0,
+                          "rate": 2.272
+                        },
+                        "CHF": {
+                          "amount": 1.0,
+                          "rate": 26.559
+                        },
+                        "THB": {
+                          "amount": 100.0,
+                          "rate": 65.535
+                        },
+                        "TRY": {
+                          "amount": 100.0,
+                          "rate": 56.938
+                        },
+                        "USD": {
+                          "amount": 1.0,
+                          "rate": 21.905
+                        },
+                        "GBP": {
+                          "amount": 1.0,
+                          "rate": 29.266
+                        }
                       }
-                    ]
+                    }
                   },
                   "with target currency filter OK returns a 200 response": {
-                    "value": [
-                      {
-                        "target_currency": "EUR",
-                        "amount": 1.0,
-                        "rate": 24.93,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "USD",
-                        "amount": 1.0,
-                        "rate": 21.905,
-                        "source_currency": "CZK"
+                    "value": {
+                      "source_currency": "CZK",
+                      "rates": {
+                        "EUR": {
+                          "amount": 1.0,
+                          "rate": 24.93
+                        },
+                        "USD": {
+                          "amount": 1.0,
+                          "rate": 21.905
+                        }
                       }
-                    ]
+                    }
                   },
                   "with date parameter OK returns a 200 response": {
-                    "value": [
-                      {
-                        "target_currency": "AUD",
-                        "amount": 1.0,
-                        "rate": 14.715,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "BRL",
-                        "amount": 1.0,
-                        "rate": 3.983,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "BGN",
-                        "amount": 1.0,
-                        "rate": 12.814,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "CNY",
-                        "amount": 1.0,
-                        "rate": 3.227,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "DKK",
-                        "amount": 1.0,
-                        "rate": 3.363,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "EUR",
-                        "amount": 1.0,
-                        "rate": 25.085,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "PHP",
-                        "amount": 100.0,
-                        "rate": 40.833,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "HKD",
-                        "amount": 1.0,
-                        "rate": 3.016,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "INR",
-                        "amount": 100.0,
-                        "rate": 26.928,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "IDR",
-                        "amount": 1000.0,
-                        "rate": 1.437,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "ISK",
-                        "amount": 100.0,
-                        "rate": 17.123,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "ILS",
-                        "amount": 1.0,
-                        "rate": 6.464,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "JPY",
-                        "amount": 100.0,
-                        "rate": 15.662,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "ZAR",
-                        "amount": 1.0,
-                        "rate": 1.269,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "CAD",
-                        "amount": 1.0,
-                        "rate": 16.277,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "KRW",
-                        "amount": 100.0,
-                        "rate": 1.616,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "HUF",
-                        "amount": 100.0,
-                        "rate": 6.29,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "MYR",
-                        "amount": 1.0,
-                        "rate": 5.292,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "MXN",
-                        "amount": 1.0,
-                        "rate": 1.14,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "XDR",
-                        "amount": 1.0,
-                        "rate": 30.878,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "NOK",
-                        "amount": 1.0,
-                        "rate": 2.124,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "NZD",
-                        "amount": 1.0,
-                        "rate": 13.31,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "PLN",
-                        "amount": 1.0,
-                        "rate": 6.037,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "RON",
-                        "amount": 1.0,
-                        "rate": 5.041,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "SGD",
-                        "amount": 1.0,
-                        "rate": 17.526,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "SEK",
-                        "amount": 1.0,
-                        "rate": 2.278,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "CHF",
-                        "amount": 1.0,
-                        "rate": 26.341,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "THB",
-                        "amount": 100.0,
-                        "rate": 69.661,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "TRY",
-                        "amount": 100.0,
-                        "rate": 64.322,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "USD",
-                        "amount": 1.0,
-                        "rate": 23.44,
-                        "source_currency": "CZK"
-                      },
-                      {
-                        "target_currency": "GBP",
-                        "amount": 1.0,
-                        "rate": 30.02,
-                        "source_currency": "CZK"
+                    "value": {
+                      "source_currency": "CZK",
+                      "rates": {
+                        "AUD": {
+                          "amount": 1.0,
+                          "rate": 14.715
+                        },
+                        "BRL": {
+                          "amount": 1.0,
+                          "rate": 3.983
+                        },
+                        "BGN": {
+                          "amount": 1.0,
+                          "rate": 12.814
+                        },
+                        "CNY": {
+                          "amount": 1.0,
+                          "rate": 3.227
+                        },
+                        "DKK": {
+                          "amount": 1.0,
+                          "rate": 3.363
+                        },
+                        "EUR": {
+                          "amount": 1.0,
+                          "rate": 25.085
+                        },
+                        "PHP": {
+                          "amount": 100.0,
+                          "rate": 40.833
+                        },
+                        "HKD": {
+                          "amount": 1.0,
+                          "rate": 3.016
+                        },
+                        "INR": {
+                          "amount": 100.0,
+                          "rate": 26.928
+                        },
+                        "IDR": {
+                          "amount": 1000.0,
+                          "rate": 1.437
+                        },
+                        "ISK": {
+                          "amount": 100.0,
+                          "rate": 17.123
+                        },
+                        "ILS": {
+                          "amount": 1.0,
+                          "rate": 6.464
+                        },
+                        "JPY": {
+                          "amount": 100.0,
+                          "rate": 15.662
+                        },
+                        "ZAR": {
+                          "amount": 1.0,
+                          "rate": 1.269
+                        },
+                        "CAD": {
+                          "amount": 1.0,
+                          "rate": 16.277
+                        },
+                        "KRW": {
+                          "amount": 100.0,
+                          "rate": 1.616
+                        },
+                        "HUF": {
+                          "amount": 100.0,
+                          "rate": 6.29
+                        },
+                        "MYR": {
+                          "amount": 1.0,
+                          "rate": 5.292
+                        },
+                        "MXN": {
+                          "amount": 1.0,
+                          "rate": 1.14
+                        },
+                        "XDR": {
+                          "amount": 1.0,
+                          "rate": 30.878
+                        },
+                        "NOK": {
+                          "amount": 1.0,
+                          "rate": 2.124
+                        },
+                        "NZD": {
+                          "amount": 1.0,
+                          "rate": 13.31
+                        },
+                        "PLN": {
+                          "amount": 1.0,
+                          "rate": 6.037
+                        },
+                        "RON": {
+                          "amount": 1.0,
+                          "rate": 5.041
+                        },
+                        "SGD": {
+                          "amount": 1.0,
+                          "rate": 17.526
+                        },
+                        "SEK": {
+                          "amount": 1.0,
+                          "rate": 2.278
+                        },
+                        "CHF": {
+                          "amount": 1.0,
+                          "rate": 26.341
+                        },
+                        "THB": {
+                          "amount": 100.0,
+                          "rate": 69.661
+                        },
+                        "TRY": {
+                          "amount": 100.0,
+                          "rate": 64.322
+                        },
+                        "USD": {
+                          "amount": 1.0,
+                          "rate": 23.44
+                        },
+                        "GBP": {
+                          "amount": 1.0,
+                          "rate": 30.02
+                        }
                       }
-                    ]
+                    }
                   },
                   "with unsupported source currency OK returns a 200 response": {
-                    "value": []
+                    "value": {}
                   }
                 }
               }

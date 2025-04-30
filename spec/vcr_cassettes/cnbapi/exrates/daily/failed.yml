@@ -19,7 +19,7 @@ http_interactions:
       message: '400'
     headers:
       Date:
-      - Wed, 30 Apr 2025 15:40:52 GMT
+      - Wed, 30 Apr 2025 17:26:08 GMT
       Server:
       - Apache
       Strict-Transport-Security:
@@ -29,8 +29,6 @@ http_interactions:
       - SAMEORIGIN
       Content-Type:
       - application/json
-      Connection:
-      - close
       Transfer-Encoding:
       - chunked
     body:

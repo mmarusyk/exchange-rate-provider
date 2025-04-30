@@ -1,13 +1,13 @@
 module ExchangeRateProvider
   module Providers
-    class CnbProvider < ProviderInterface
+    class CnbProvider < BaseProvider
       BASE_URL = 'https://api.cnb.cz/cnbapi/exrates/daily'.freeze
       SOURCE_CURRENCY = 'CZK'.freeze
       EXPIRES_IN = 1.hour.freeze
 
-      def call(date: nil, lang: nil)
-        Rails.cache.fetch(cache_key(date, lang), expires_in: EXPIRES_IN) do
-          response = make_request(date: date, lang: lang)
+      def call(date: nil)
+        Rails.cache.fetch(cache_key(date), expires_in: EXPIRES_IN) do
+          response = make_request(date: date)
 
           parse_response(response)
         end
@@ -15,10 +15,9 @@ module ExchangeRateProvider
 
       private
 
-      def make_request(date: nil, lang: nil)
+      def make_request(date: nil)
         params = {}
         params[:date] = date if date
-        params[:lang] = lang if lang
 
         Faraday.get(BASE_URL, params)
       end
@@ -45,8 +44,8 @@ module ExchangeRateProvider
         end
       end
 
-      def cache_key(date, lang)
-        ['exchange_rates', 'cnb', SOURCE_CURRENCY, date, lang].join('_')
+      def cache_key(date)
+        ['exchange_rates', 'cnb', SOURCE_CURRENCY, date].join('_')
       end
     end
   end

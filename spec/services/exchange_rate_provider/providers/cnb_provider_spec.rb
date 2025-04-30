@@ -7,7 +7,7 @@ RSpec.describe ExchangeRateProvider::Providers::CnbProvider do
     let(:rates) { cnb_provider.call }
     let(:first_rate) { rates.first }
 
-    context 'when fetching exchange rates', vcr: { cassette_name: 'cnbapi/exrates/daily/cz/ok' } do
+    context 'when fetching exchange rates', vcr: { cassette_name: 'cnbapi/exrates/daily/ok' } do
       it 'returns an array of rates' do
         expect(rates).to be_an(Array)
       end
@@ -42,12 +42,6 @@ RSpec.describe ExchangeRateProvider::Providers::CnbProvider do
 
       it 'returns rates with the specified date' do
         expect(dated_rates).to be_present
-      end
-    end
-
-    context 'with language parameter', vcr: { cassette_name: 'cnbapi/exrates/daily/en/ok' } do
-      it 'returns different country names based on language' do
-        expect(cnb_provider.call(lang: 'EN')).to be_present
       end
     end
   end

@@ -9,7 +9,6 @@ RSpec.describe '/api/v1/exchange_rates' do
 
       parameter name: :source_currency, in: :query, required: true, schema: { pattern: '^[A-Z]{3}$', default: 'CZK' }
       parameter name: :date, in: :query, required: false, schema: { type: :string, format: 'date' }
-      parameter name: :lang, in: :query, required: false, schema: { type: :string, enum: %w[CZ EN] }
 
       parameter name: :'target_currency[]', in: :query, required: false,
                 schema: {
@@ -27,7 +26,7 @@ RSpec.describe '/api/v1/exchange_rates' do
         }
       end
 
-      context 'with basic parameters', vcr: { cassette_name: 'cnbapi/exrates/daily/cz/ok' } do
+      context 'with basic parameters', vcr: { cassette_name: 'cnbapi/exrates/daily/ok' } do
         response('200', 'OK') do
           run_test! do |response|
             data = JSON.parse(response.body)
@@ -37,7 +36,7 @@ RSpec.describe '/api/v1/exchange_rates' do
         end
       end
 
-      context 'with target currency filter', vcr: { cassette_name: 'cnbapi/exrates/daily/cz/ok' } do
+      context 'with target currency filter', vcr: { cassette_name: 'cnbapi/exrates/daily/ok' } do
         let(:'target_currency[]') { %w[EUR USD] }
 
         response('200', 'OK') do
@@ -51,17 +50,6 @@ RSpec.describe '/api/v1/exchange_rates' do
 
       context 'with date parameter', vcr: { cassette_name: 'cnbapi/exrates/daily/with_date/ok' } do
         let(:date) { '2025-03-05' }
-
-        response('200', 'OK') do
-          run_test! do |response|
-            data = JSON.parse(response.body)
-            expect(data).to be_present
-          end
-        end
-      end
-
-      context 'with language parameter', vcr: { cassette_name: 'cnbapi/exrates/daily/en/ok' } do
-        let(:lang) { 'EN' }
 
         response('200', 'OK') do
           run_test! do |response|
@@ -90,7 +78,7 @@ RSpec.describe '/api/v1/exchange_rates' do
           run_test! do |response|
             data = JSON.parse(response.body)
             expect(data['errors']).to have_key('source_currency')
-            expect(data['errors']['source_currency']).to include('must be a valid 3-letter currency code')
+            expect(data['errors']['source_currency']).to include('is in invalid format')
           end
         end
 

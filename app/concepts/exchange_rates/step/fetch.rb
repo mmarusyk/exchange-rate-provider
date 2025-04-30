@@ -2,9 +2,9 @@ module ExchangeRates
   module Step
     class Fetch
       def self.call(options, params:, **)
-        provider = ExchangeRateProvider::ProviderInterface.for(params[:source_currency])
+        provider = ExchangeRateProvider::ProviderFactory.call(params[:source_currency])
 
-        options[:result] = provider.call(date: params[:date], lang: params[:lang])
+        options[:result] = provider.call(date: params[:date])
 
         true
       rescue ExchangeRateProvider::UnsupportedCurrencyError

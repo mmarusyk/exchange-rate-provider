@@ -465,11 +465,11 @@
             }
           },
           "422": {
-            "description": "Invalid request parameters",
+            "description": "Unprocessable Content",
             "content": {
               "application/json": {
                 "examples": {
-                  "Invalid request parameters with invalid source currency format returns a 422 response": {
+                  "with invalid source currency format Unprocessable Content returns a 422 response": {
                     "value": {
                       "errors": {
                         "source_currency": [
@@ -478,7 +478,7 @@
                       }
                     }
                   },
-                  "Invalid request parameters with invalid target currency format returns a 422 response": {
+                  "with invalid target currency format Unprocessable Content returns a 422 response": {
                     "value": {
                       "errors": {
                         "target_currency": {
@@ -489,7 +489,7 @@
                       }
                     }
                   },
-                  "Invalid request parameters with invalid date format returns a 422 response": {
+                  "with invalid date format Unprocessable Content returns a 422 response": {
                     "value": {
                       "errors": {
                         "date": [
@@ -498,7 +498,7 @@
                       }
                     }
                   },
-                  "Invalid request parameters when external server returns an error returns a 422 response": {
+                  "when external server returns an error Unprocessable Content returns a 422 response": {
                     "value": {
                       "errors": {
                         "base": [

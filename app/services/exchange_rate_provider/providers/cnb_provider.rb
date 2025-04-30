@@ -33,13 +33,10 @@ module ExchangeRateProvider
       def build_exchange_rates(data)
         data['rates'].map do |rate_data|
           ExchangeRate.new(
-            date: rate_data['validFor'],
             source_currency: SOURCE_CURRENCY,
             target_currency: rate_data['currencyCode'],
             amount: rate_data['amount'].to_f,
-            rate: rate_data['rate'].to_f,
-            country: rate_data['country'],
-            currency_name: rate_data['currency']
+            rate: rate_data['rate'].to_f
           )
         end
       end

@@ -71,41 +71,47 @@ RSpec.describe '/api/v1/exchange_rates' do
         end
       end
 
-      response('422', 'Invalid request parameters') do
-        context 'with invalid source currency format' do
-          let(:source_currency) { 'invalid' }
+      context 'with invalid source currency format' do
+        let(:source_currency) { 'invalid' }
 
+        response('422', 'Unprocessable Content') do
           run_test! do |response|
             data = JSON.parse(response.body)
             expect(data['errors']).to have_key('source_currency')
             expect(data['errors']['source_currency']).to include('is in invalid format')
           end
         end
+      end
 
-        context 'with invalid target currency format' do
-          let(:source_currency) { 'CZK' }
-          let(:'target_currency[]') { ['invalid'] }
+      context 'with invalid target currency format' do
+        let(:source_currency) { 'CZK' }
+        let(:'target_currency[]') { ['invalid'] }
 
+        response('422', 'Unprocessable Content') do
           run_test! do |response|
             data = JSON.parse(response.body)
             expect(data['errors']).to have_key('target_currency')
           end
         end
+      end
 
-        context 'with invalid date format' do
-          let(:source_currency) { 'CZK' }
-          let(:date) { 'invalid-date' }
+      context 'with invalid date format' do
+        let(:source_currency) { 'CZK' }
+        let(:date) { 'invalid-date' }
 
+        response('422', 'Unprocessable Content') do
           run_test! do |response|
             data = JSON.parse(response.body)
             expect(data['errors']).to have_key('date')
           end
         end
+      end
 
-        context 'when external server returns an error', vcr: { cassette_name: 'cnbapi/exrates/daily/failed' } do
-          let(:source_currency) { 'CZK' }
-          let(:date) { '2025-03-05' }
+      context 'when external server returns an error', vcr: { cassette_name: 'cnbapi/exrates/daily/failed' } do
+        let(:source_currency) { 'CZK' }
+        let(:date) { '2025-03-05' }
 
+        response('422', 'Unprocessable Content') do
           run_test! do |response|
             data = JSON.parse(response.body)
             expect(data['errors']).to have_key('base')

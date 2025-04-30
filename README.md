@@ -80,7 +80,7 @@ The API is documented using OpenAPI/Swagger. Once the application is running, yo
 1. Running Tests
 
 ```
-docker compose run app bundle exec rspec
+docker compose run -e RAILS_ENV=test app bundle exec rspec
 ```
 
 2. Running Rubocop

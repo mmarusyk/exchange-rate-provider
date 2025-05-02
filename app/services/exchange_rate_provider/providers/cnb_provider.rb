@@ -2,7 +2,6 @@ module ExchangeRateProvider
   module Providers
     class CnbProvider < BaseProvider
       BASE_URL = 'https://api.cnb.cz/cnbapi/exrates/daily'.freeze
-      SOURCE_CURRENCY = 'CZK'.freeze
       EXPIRES_IN = 1.hour.freeze
 
       def call(date: nil)
@@ -33,7 +32,7 @@ module ExchangeRateProvider
       def build_exchange_rates(data)
         data['rates'].map do |rate_data|
           ExchangeRate.new(
-            source_currency: SOURCE_CURRENCY,
+            source_currency: CZK_CURRENCY,
             target_currency: rate_data['currencyCode'],
             amount: rate_data['amount'].to_f,
             rate: rate_data['rate'].to_f
@@ -42,7 +41,7 @@ module ExchangeRateProvider
       end
 
       def cache_key(date)
-        ['exchange_rates', 'cnb', SOURCE_CURRENCY, date].join('_')
+        ['exchange_rates', 'cnb', CZK_CURRENCY, date].join('_')
       end
     end
   end

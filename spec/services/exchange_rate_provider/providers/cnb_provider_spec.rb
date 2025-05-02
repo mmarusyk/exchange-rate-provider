@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ExchangeRateProvider::Providers::CnbProvider do
   describe '#call' do
-    subject(:cnb_provider) { described_class.new }
+    subject(:cnb_provider) { described_class.instance }
 
     let(:rates) { cnb_provider.call }
     let(:first_rate) { rates.first }
@@ -21,7 +21,7 @@ RSpec.describe ExchangeRateProvider::Providers::CnbProvider do
       end
 
       it 'uses CZK as source currency' do
-        expect(first_rate.source_currency).to eq('CZK')
+        expect(first_rate.source_currency).to eq(CZK_CURRENCY)
       end
 
       it 'has valid target currency format' do

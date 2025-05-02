@@ -7,7 +7,8 @@ RSpec.describe '/api/v1/exchange_rates' do
       description 'Retrieves exchange rates based on source currency'
       produces 'application/json'
 
-      parameter name: :source_currency, in: :query, required: true, schema: { pattern: '^[A-Z]{3}$', default: 'CZK' }
+      parameter name: :source_currency, in: :query, required: true,
+                schema: { pattern: '^[A-Z]{3}$', default: CZK_CURRENCY }
       parameter name: :date, in: :query, required: false, schema: { type: :string, format: 'date' }
 
       parameter name: :'target_currency[]', in: :query, required: false,
@@ -16,7 +17,7 @@ RSpec.describe '/api/v1/exchange_rates' do
                   items: { type: :string, pattern: '^[A-Z]{3}$' }
                 }
 
-      let(:source_currency) { 'CZK' }
+      let(:source_currency) { CZK_CURRENCY }
 
       after do |example|
         example.metadata[:response][:content] = {
@@ -83,7 +84,6 @@ RSpec.describe '/api/v1/exchange_rates' do
       end
 
       context 'with invalid target currency format' do
-        let(:source_currency) { 'CZK' }
         let(:'target_currency[]') { ['invalid'] }
 
         response('422', 'Unprocessable Content') do
@@ -95,7 +95,6 @@ RSpec.describe '/api/v1/exchange_rates' do
       end
 
       context 'with invalid date format' do
-        let(:source_currency) { 'CZK' }
         let(:date) { 'invalid-date' }
 
         response('422', 'Unprocessable Content') do
@@ -107,7 +106,6 @@ RSpec.describe '/api/v1/exchange_rates' do
       end
 
       context 'when external server returns an error', vcr: { cassette_name: 'cnbapi/exrates/daily/failed' } do
-        let(:source_currency) { 'CZK' }
         let(:date) { '2025-03-05' }
 
         response('422', 'Unprocessable Content') do
